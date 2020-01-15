@@ -1,8 +1,8 @@
 package main
 
-// import (
-// 	"fmt"
-// )
+import (
+	"fmt"
+)
 
 func main() {
 	var cards Deck
@@ -11,10 +11,12 @@ func main() {
 
 	// cards.print()
 
-	hand, cards := cards.deal(5)
-	hand.print()
-	cards.print()
+	// hand, cards := cards.deal(5)
+	// hand.print()
+	// cards.print()
 
 	// fmt.Println(len(cards))
+	res := cards.saveToDisk("testFileSave")
+	fmt.Println(res)
 
 }

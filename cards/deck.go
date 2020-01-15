@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
+	"strings"
 )
 
 // create a new type called "Deck"
@@ -42,6 +44,20 @@ func (d Deck) print() {
 func (d Deck) deal(numHand int) (Deck, Deck) {
 	hand := d[:numHand]
 	remainingCards := d[numHand:]
-	
+
 	return hand, remainingCards
+}
+
+func (d Deck) toString() string {
+	deckAsString := []string(d) // type convert(cast)
+
+	res := strings.Join(deckAsString, ",") // https://golang.org/pkg/io/ioutil/#WriteFile
+
+	return res
+}
+
+func (d Deck) saveToDisk(filename string) error {
+	content := []byte(d.toString()) // type cast
+
+	return ioutil.WriteFile(filename, content, 0666) // https://golang.org/pkg/io/ioutil/#WriteFile
 }
