@@ -13,7 +13,7 @@ func newDeck() Deck {
 	deck := Deck{}
 
 	cardValues := []string{"Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"}
-	cardSuits := []string{"Spades", "Diamond", "Clubs", "Hearts"} 
+	cardSuits := []string{"Spades", "Diamond", "Clubs", "Hearts"}
 
 	for _, val := range cardValues {
 		for _, suit := range cardSuits {
@@ -37,4 +37,11 @@ func (d Deck) print() {
 
 	fmt.Println("\n\nOk, you're done.")
 
+}
+
+func (d Deck) deal(numHand int) (Deck, Deck) {
+	hand := d[:numHand]
+	remainingCards := d[numHand:]
+	
+	return hand, remainingCards
 }
