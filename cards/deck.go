@@ -1,10 +1,10 @@
 package main
 
 import (
-	"math/rand"
 	"fmt"
 	"io/ioutil"
 	"log"
+	"math/rand"
 	"os"
 	"strings"
 )
@@ -25,7 +25,7 @@ func newDeck() Deck {
 			deck = append(deck, val+" of "+suit)
 		}
 	}
-	
+
 	deck = append(deck, "Joker 1", "Joker 2")
 
 	return deck
@@ -90,10 +90,9 @@ func loadDeckFromFile(filename string) Deck {
 
 }
 
-
-func (d Deck) shuffle()  {
-	for i:= range d{
-		random:= rand.Intn(len(d)-1)
+func (d Deck) shuffle() {
+	for i := range d {
+		random := rand.Intn(len(d) - 1)
 		// swap
 		d[i], d[random] = d[random], d[i]
 	}
