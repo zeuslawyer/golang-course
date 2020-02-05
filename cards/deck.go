@@ -97,3 +97,4 @@ func (d Deck) shuffle() {
 		d[i], d[random] = d[random], d[i]
 	}
 }
+

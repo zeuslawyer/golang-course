@@ -28,14 +28,11 @@ for ind, val := range cards {
 
 ```
 
-
 ### testing
 
 - all test files must end with `_test.go`
 - the command to run tests is `go test`
-- naming:  a func with name `someFunc()` should be tested with `TestSomeFunc()`
-
-
+- naming: a func with name `someFunc()` should be tested with `TestSomeFunc()`. Test func name **must** start with "Test"
 
 ### References:
 
